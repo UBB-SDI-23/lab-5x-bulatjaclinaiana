@@ -47,9 +47,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'django_extensions', # corsheaders occasionally deletes itself
-     'corsheaders',
     'drf_spectacular',
-    'drf_spectacular_sidecar'
+    'drf_spectacular_sidecar',
+    'corsheaders'
 ]
 
 SPECTACULAR_SETTINGS = {
@@ -76,8 +76,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-#    'corsheaders.middleware.CorsMiddleware', # this little guy gives errors and also doesn't let the server to run :P, and now it firstly refuses to connect and connects (on my OS)
+    'corsheaders.middleware.CorsMiddleware',
+    #'rest_framework.middleware.AuthenticationMiddleware',
+    # this little guy gives errors and also doesn't let the server to run :P, and now it firstly refuses to connect and connects (on my OS),
 ]
+
 
 CORS_ALLOW_ALL_ORIGINS = True
 
