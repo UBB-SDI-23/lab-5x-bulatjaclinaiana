@@ -5,7 +5,7 @@ export const BotanicalGardenShowAll = () => {
   const [botanicalGarden, setBotanicalGarden] = useState([]);
 
   useEffect(() => {
-  fetch("http://127.0.0.1:8000/api/botanicalgarden/")
+  fetch("http://ec2-13-53-243-233.eu-north-1.compute.amazonaws.com/api/botanicalgarden/")
   .then(res => res.json())
   .then(data => {
     console.log(data);
